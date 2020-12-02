@@ -15,6 +15,7 @@ const { render } = require('ejs');
 const blogRoutes = require('./routes/blogRoutes')
 // 8 move the const blog to blogRoutes.js
 
+const port = process.env.PORT || 3000
 
 app.set('view engine', 'ejs');
 
@@ -24,7 +25,7 @@ const dbURI =
   "mongodb+srv://davidexample:Looping!@nodeninja.qfuek.mongodb.net/NodeNinja?retryWrites=true&w=majority";
 mongoose.connect(dbURI, {useNewUrlParser: true, useUnifiedTopology: true})
   .then((result) => {console.log('connected to db')
-    app.listen(3000);})
+    app.listen(port);})
   .catch((err) => console.log(err))
 const morgan = require('morgan')
 
